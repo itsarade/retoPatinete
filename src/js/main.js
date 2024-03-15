@@ -1,45 +1,35 @@
-class Participante {
-    constructor(nombre, participacion = true) {
-        this.nombre = nombre;
-        this.participacion = participacion;
-    }
+class participantes {
+  constructor(name, participacion) {
+    this.name = name;
+    this.participacion = participacion;
+  }
 }
 
-class Sorteo {
-    constructor(participantes) {
-        this.participantes = participantes.map(nombre => new Participante(nombre));
-        this.eliminados = [];
-    }
+const Concursantes = [
+  new participantes("Sergio", true),
+  new participantes("Sergi", true),
+  new participantes("Sara", true),
+  new participantes("Alex", true),
+  new participantes("Thriza", true),
+  new participantes("Eric", true),
+  new participantes("Aitor", true),
+  new participantes("Shehe", true),
+  new participantes("Moha", true),
+  new participantes("David", true),
+  new participantes("Albert", true),
+  new participantes("Adri", true),
+];
 
-    realizarSorteo() {
-        // Filtrar participantes que aún están en el sorteo
-        const participantesActivos = this.participantes.filter(participante => participante.participacion);
+console.log(Concursantes[1]);
 
-        // Elegir aleatoriamente un participante para eliminar
-        const indiceEliminado = Math.floor(Math.random() * participantesActivos.length);
-        const eliminado = participantesActivos[indiceEliminado];
+const participantesContainer = document.querySelector(".participantes");
 
-        // Actualizar el estado del participante eliminado y agregarlo a la lista de eliminados
-        eliminado.participacion = false;
-        this.eliminados.push(eliminado.nombre);
-
-        // Devolver el nombre del jugador eliminado
-        return eliminado.nombre;
-    }
-
-    ejecutarSorteo() {
-        // Realizar sorteos hasta que quede un participante
-        while (this.participantes.filter(participante => participante.participacion).length > 1) {
-            console.log("El jugador eliminado es:", this.realizarSorteo());
-        }
-
-        // Encontrar al último participante que queda
-        const ganadorFinal = this.participantes.find(participante => participante.participacion);
-        console.log("¡El ganador final es:", ganadorFinal.nombre, "!");
-    }
-}
-
-// Ejemplo de uso
-const nombresParticipantes = ["Alex", "Sergio", "Sergi", "Sara", "Thirza", "Sheherezade", "Albert", "Adrià", "Moha", "David", "Eric", "Aitor"];
-const sorteo = new Sorteo(nombresParticipantes);
-sorteo.ejecutarSorteo();
+// Recorrer el array de concursantes y crear elementos para cada uno
+Concursantes.forEach((concursante) => {
+  // Crear un elemento de lista (li) para cada concursante
+  const concursanteElement = document.createElement("p");
+  // Establecer el texto del elemento de lista como el nombre del concursante
+  concursanteElement.textContent = concursante.name;
+  // Agregar el elemento de lista al contenedor de participantes
+  participantesContainer.appendChild(concursanteElement);
+});
