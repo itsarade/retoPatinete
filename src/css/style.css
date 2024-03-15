@@ -41,16 +41,17 @@ h2 {
     border: 1px solid #e1e1e1;
 }
 
-li {
+ul {
     list-style-type: none;
     columns: 2;
     margin-top: 40px;
 }
 
-ul {
+li {
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
     margin-top: 0px;
+    margin-bottom: 8px;
 }
 
 .eliminar {
