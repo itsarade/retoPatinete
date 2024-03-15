@@ -1,6 +1,7 @@
 body {
     background-color: #f9f9f9;
     margin: 20px;
+    user-select: none;
 }
 
 h1{
@@ -71,6 +72,12 @@ li {
     cursor: pointer;
 }
 
+.title {
+    margin-bottom: 30px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
 
 
 
