@@ -32,6 +32,7 @@ h2 {
 .container {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 .listas {
