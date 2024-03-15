@@ -43,11 +43,13 @@ h2 {
 
 li {
     list-style-type: none;
+    columns: 2;
 }
 
 ul {
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
+    margin-top: 0px;
 }
 
 .eliminar {
